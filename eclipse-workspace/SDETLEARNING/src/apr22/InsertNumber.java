@@ -1,4 +1,4 @@
-package day1;
+package apr22;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ public class InsertNumber {/*
 	@Test // +ve
 	public void example1() {
 		int arr[]= {1,2,3,5,6,7};
-		int n=8;
+		int n=4;
 		bruteForce(arr,n);
 		
 
@@ -38,13 +38,16 @@ public class InsertNumber {/*
 	private void bruteForce(int[] num, int n) {
 		int[] output=new int[num.length+1];
 		int i=0;
-		int j=0;
-		for(; i<n-1; i++) {
-			output[j++]=num[i];
+		for(; i<num.length; i++) {
+			if(num[i]<n) {
+			output[i]=num[i];
+			}else {
+				break;
+			}
 		}
-		output[j++]=n;
+		output[i]=n;
 		for(; i<num.length;i++) {
-			output[j++]=num[i];
+			output[i+1]=num[i];
 		}
 		System.out.println(Arrays.toString(output));
 		
