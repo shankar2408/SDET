@@ -12,11 +12,15 @@ public class ArrayFunctions {
 	 * trim to the given length f.Remove the first and last occurrence of a given number in the input array
 input = {1,2,3,4,5,1}, number = 1
 output = {2,3,5}
+g.Remove all occurrence of a number which is present in the given index number
+input = {1,2,3,4,5,1}, indexToRemove = 5
+output = {2,3,4,5}
 	 */
 
 	@Test // +ve
 	public void example1() {
 		int[] arr = { 1, 2, 3, 4, 5 };
+		int[] occuranceArray= {6,1,2,3,6,1,6,4,5,1,6};
 		int contains = 3;
 		int trimLength=3;
 		int remove=1;
@@ -27,19 +31,12 @@ output = {2,3,5}
 		System.out.println(Arrays.toString(trimLengthOfArray(arr,trimLength)));
 		System.out.println(Arrays.toString(removeValueInArray(arr,remove)));
 		System.out.println(Arrays.toString(addNumberAtIndexOfArray(arr,add,index)));
-		System.out.println(Arrays.toString(removefirstlastOccurrenceinArray(arr)));
+		System.out.println(Arrays.toString(removefirstlastOccurrenceinArray(occuranceArray,remove)));
+		System.out.println(Arrays.toString(removeGivenIndexAllOccurrenceinArray(occuranceArray,index)));
 
 	}
 
-	@Test // edge
-	public void example2() {
-
-	}
-
-	@Test // negative
-	public void example3() {
-
-	}
+	
 
 	/*
 	 * Brute force !! Psuedo code here:
@@ -92,7 +89,6 @@ output = {2,3,5}
 			}
 				
 		}return removedArray;
-
 	}
 
 	private int[] trimLengthOfArray(int[] arr, int trimLength) {
@@ -103,14 +99,55 @@ output = {2,3,5}
 		return trimArray;
 	}
 	
-	private int[] removefirstlastOccurrenceinArray(int[] arr) {
-		int[] remFLOccurence=new int[arr.length-2];
+	private int[] removefirstlastOccurrenceinArray(int[] occuranceArray, int remove) {
+		int[] remFLOccurence=new int[occuranceArray.length-2];
 		int j = 0;
-		for(int i=1; i<arr.length-1; i++) {
-			remFLOccurence[j++]=arr[i];
+		int first=occuranceArray.length;
+		int last=0;
+		for(int i=0; i<occuranceArray.length; i++) {
+			if(occuranceArray[i]==remove) {
+				first=Math.min(i, first);
+				last=Math.max(i, last);	
 			}
-		return remFLOccurence;
-		
+			}
+		//System.out.println(first+":"+last);
+		for(int i=0; i<occuranceArray.length; i++) {
+			if(i!=first && i!=last ) {
+				//System.out.println(i);
+				remFLOccurence[j++]=occuranceArray[i];
+			}	
+		}
+		return remFLOccurence;	
 	}
+	
+	private int[] removeGivenIndexAllOccurrenceinArray(int[] occuranceArray, int index) {
+		int[] output=new int[occuranceArray.length];
+		int j=0;
+		int k=0;
+		int value=0;
+		int count=0;
+		for(int i=0; i<occuranceArray.length; i++) {
+			if(i==index) {
+				value=occuranceArray[i];
+				break;
+			}
+		}
+		
+		for(int i=0; i<occuranceArray.length; i++) {
+			if(occuranceArray[i]!=value) {
+				output[j++]=occuranceArray[i];
+				count++;
+			}
+		}
+		
+
+		int[] op=new int[count];
+		for(int i=0; i<count; i++) {
+				op[k++]=output[i];
+			}
+
+		return op;
+	}
+
 
 }

@@ -52,10 +52,10 @@ Increment the large integer by one and return the resulting array of digits.
 		        digits[i] = 0;
 		    }
 		    //handle 9
-		    int[] newNumber = new int [n+1];
-		    newNumber[0] = 1;
+		    digits = new int [n+1];
+		    digits[0] = 1;
 		    
-		    return newNumber;
+		    return digits;
 
 	}
 
