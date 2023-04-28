@@ -26,6 +26,8 @@ output = {2,3,4,5}
 		int remove=1;
 		int add=6;
 		int index=6;
+		int[] nums = {11,8,9,6,4,2,3,5,7,0,1};
+		System.out.println(findmissingNumber(nums));
 		System.out.println(printArrayAsString(arr));
 		System.out.println(containsArray(arr, contains));
 		System.out.println(Arrays.toString(trimLengthOfArray(arr,trimLength)));
@@ -148,6 +150,23 @@ output = {2,3,4,5}
 
 		return op;
 	}
+	
+	 public int findmissingNumber(int[] nums) {
+			
+		 int[] op=new int[nums.length+1];
+		 
+		 for(int i=0; i<nums.length; i++) {
+			 op[nums[i]]=1;
+		 }
+		 
+		 for(int i=0; i<op.length; i++){
+			if(op[i]==0) {
+				return i;
+			} 
+		 }
+		 return 0;
+		  
+	 }
 
 
 }

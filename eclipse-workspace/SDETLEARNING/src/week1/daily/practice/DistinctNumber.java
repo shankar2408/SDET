@@ -1,4 +1,4 @@
-package apr22;
+package week1.daily.practice;
 
 import java.util.Arrays;
 
