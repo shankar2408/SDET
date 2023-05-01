@@ -29,7 +29,7 @@ public class ReverseVowels {
 	
 	@Test
 	public void example4() {
-		String str = "hlllloei";
+		String str = "Hello Everyone! Welcome to Testleaf";
 		//wennorofcedi
 		System.out.println(reverseVowelsOnly(str));
 
