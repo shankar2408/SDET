@@ -23,7 +23,7 @@ AB -> 28
 	public void example1() {
 		int columnNumber=30;
 		int n=19;
-		System.out.println(convertToColumnTitle(columnNumber));
+		System.out.println(convertToTitle(columnNumber));
 		System.out.println(isHappy(n));
 
 	}
@@ -39,6 +39,19 @@ AB -> 28
         }
         return ans;
     }
+	
+	 public String convertToTitle(int columnNumber) {
+	        String alpha="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	        StringBuilder sb=new StringBuilder();
+
+	        while(columnNumber>0){
+	            int remVal=(columnNumber-1)%26;//1
+	            sb.append(alpha.charAt(remVal));//B
+	           columnNumber=(columnNumber-1)/26;//(1-1)/26=0
+	        }
+	        return sb.reverse().toString();//AB
+
+	 }
 
 		
 	public boolean isHappy(int n) {

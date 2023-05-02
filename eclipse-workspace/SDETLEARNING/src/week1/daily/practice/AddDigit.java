@@ -45,6 +45,7 @@ public class AddDigit {/*
 		int len = str.length();
 
 		for (int i = 0; i < len; i++) {
+			//while(num<9) {
 			int modulus = num % 10;
 			int divide = num / 10;
 			//System.out.println(modulus+"->"+divide);

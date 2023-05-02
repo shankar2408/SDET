@@ -2,7 +2,33 @@ package week2;
 
 
 // VERIFY OUTPUT FROM https://string-functions.com/decimal-hex.aspx
+/*
+ * Pseudocode for number to Hexa-decimal
 
+For positive Numbers
+  Find the fraction
+  Say number is = 47
+  number %16 = 15 which is F
+  number = number/16 = 2 (Repeat till number is > 0)
+  output - 2F
+For Negative Numbers
+// Step 1
+  Convert the no to binary
+    Use the same code above, just instead of 16 use 2
+
+// Step 2
+  Find 2's complement to the number
+    Add 0s before the number to make the number of length 32
+    Find One's complement
+        Replace all 1 with 0 and 0 with 1
+    Add 1 to the One's Complement
+
+// Step 3
+  Calculate the hexadecimal value
+    Split the 32 bits in pair of 4s
+    Say if the bits are 1111 then hex will be 1*2^3 + 1*2^2 + 1*2^1 + 1*2^0 = 15 = F
+ * 
+ */
 public class ConverToHex {
 
   public static void main(String[] args) {
