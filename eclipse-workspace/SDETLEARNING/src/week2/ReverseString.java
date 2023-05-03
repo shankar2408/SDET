@@ -1,5 +1,7 @@
 package week2;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 public class ReverseString {
@@ -46,6 +48,7 @@ public class ReverseString {
 		right--;
 	}
 	s[i]=new String(c);
+	//System.out.println(Arrays.toString(s));
 	}
 		
     return String.join(" ",s);
