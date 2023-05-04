@@ -14,6 +14,7 @@ public class DIStirngMatch {
 	public void example1() {
 		String s = "IDID";
 		System.out.println(Arrays.toString(bruteForce(s)));
+		System.out.println(Arrays.toString(match(s)));
 
 	}
 
@@ -21,12 +22,16 @@ public class DIStirngMatch {
 	public void example2() {
 		String s = "III";
 		System.out.println(Arrays.toString(bruteForce(s)));
+		System.out.println(Arrays.toString(match(s)));
+
 	}
 
 	@Test // negative
 	public void example3() {
 		String s = "DDI";
 		System.out.println(Arrays.toString(bruteForce(s)));
+		System.out.println(Arrays.toString(match(s)));
+
 	}
 
 	/* 
@@ -54,4 +59,25 @@ public class DIStirngMatch {
 	        result[result.length - 1] = start;
 	        return result;
 	    }
-	}
+	
+
+public int[] match(String s) {
+	 int[] temp = new int[s.length()+1];
+     
+     int start = 0;
+     int end = s.length();
+     for(int i =0; i < s.length();i++){
+         if(s.charAt(i)=='I'){
+             temp[i] = start++;
+             
+         } else if(s.charAt(i)=='D'){
+            temp[i] = end--;
+            
+         }
+
+     }
+     temp[s.length()] = start;  
+     
+   return temp;
+ }
+}
