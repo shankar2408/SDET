@@ -11,20 +11,26 @@ public class ThirdMaxNum {
 
 	@Test // +ve
 	public void example1() {
-		int[] nums = {4, 6, 2, 5};
+		int[] nums = {3,2,1};
 		System.out.println(bruteForce(nums));
+		System.out.println(bruteForce1(nums));
+
 	}
 
 	@Test // edge
 	public void example2() {
-		int[] nums = { 1, 9 };
+		int[] nums = { 1, 2 };
 		System.out.println(bruteForce(nums));
+		System.out.println(bruteForce1(nums));
+
 	}
 
 	@Test // negative
 	public void example3() {
 		int[] nums = { 2, 2, 3, 1 };
 		System.out.println(bruteForce(nums));
+		System.out.println(bruteForce1(nums));
+
 	}
 
 	/*
@@ -32,7 +38,7 @@ public class ThirdMaxNum {
 	 * for iteration if(num>max1), max1=num; return max 3 if no max 3 then return
 	 * max1
 	 */
-
+//O(n)
 	//leetcode answer
 	private int bruteForce(int[] nums) {
 		Integer max1 = null;
@@ -54,4 +60,32 @@ public class ThirdMaxNum {
 		}
 		return max3 == null ? max1 : max3;
 	}
-}
+	//int[] nums = { 2, 2, 3, 1 };
+	private int bruteForce1(int[] nums) {
+		int n=nums.length;
+        long firstmax=Integer.MIN_VALUE;   
+        long secondmax=Integer.MIN_VALUE;   
+        long thirdmax=Integer.MIN_VALUE;   
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]>firstmax)
+            {
+                thirdmax=secondmax;
+                secondmax=firstmax;
+                firstmax=nums[i];
+            }
+            else if(nums[i]>secondmax &&nums[i]<firstmax)
+            {
+                thirdmax=secondmax;
+                secondmax=nums[i];
+            }
+            else if(nums[i]>thirdmax && nums[i]<secondmax)
+            {
+                thirdmax=nums[i];
+            }
+        }
+        return (int) (thirdmax==Integer.MIN_VALUE ? firstmax : thirdmax);
+        
+    }
+
+	}
