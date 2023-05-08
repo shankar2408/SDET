@@ -1,4 +1,4 @@
-package week3;
+package week3.Sort;
 
 import org.junit.Test;
 

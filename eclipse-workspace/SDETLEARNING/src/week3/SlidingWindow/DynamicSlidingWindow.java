@@ -1,4 +1,4 @@
-package week3;
+package week3.SlidingWindow;
 
 import java.util.Arrays;
 
