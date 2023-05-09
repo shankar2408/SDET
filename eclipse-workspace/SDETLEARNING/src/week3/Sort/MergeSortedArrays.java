@@ -33,7 +33,8 @@ public class MergeSortedArrays {
         int right = 0 ;
         int k = 0 ;
         while(left<nums1.length && right<nums2.length){
-        	if(nums1[left]<nums2[right]) temp[k++] = nums1[left++];
+        	if(nums1[left]<nums2[right]) 
+        	temp[k++] = nums1[left++];
         	else temp[k++] = nums2[right++];       
         }
         while(left < nums1.length) 

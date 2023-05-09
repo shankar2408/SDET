@@ -5,12 +5,12 @@ import org.junit.Test;
 public class SlidingWindow {
 	/*
 	 * Question here !!
-	 * 
+	 * max sum in 3 length
 	 */
 
 	@Test // +ve
 	public void example1() {
-		int[] nums = {1,5,2,3,7,1};
+		int[] nums = {11,1,5,2,3,7,1,50};
 		int k=3;
 		System.out.println(bruteForce(nums,k));
 		slidingWindow(nums,k);
@@ -27,7 +27,7 @@ public class SlidingWindow {
 	private int bruteForce(int[] nums, int k) {
 		int sum=0;
 		int max=0;
-		for(int i=0; i<nums.length-k; i++) {
+		for(int i=0; i<nums.length-k+1; i++) {
 			sum=nums[i]+nums[i+1]+nums[i+2];
 			if(sum>max) {
 				max=sum;
@@ -44,8 +44,9 @@ public class SlidingWindow {
 			maxSum=maxSum+nums[i];
 		}
 		int sum=maxSum;
-		for(int i=1; i<nums.length-k; i++) {
+		for(int i=1; i<nums.length-k+1; i++) {
 			sum=sum-nums[i-1]+nums[i+k-1];
+			//System.out.println(sum);
 			if(sum>maxSum) {
 				maxSum=sum;
 			}

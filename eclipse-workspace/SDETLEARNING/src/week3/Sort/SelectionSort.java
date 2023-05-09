@@ -21,7 +21,7 @@ public class SelectionSort {
 	/* 
 	 * Brute force !!
 	 * Psuedo code here:
-	 * 
+	 * Low value first
 	 * 
 	 */
 
@@ -33,14 +33,42 @@ public class SelectionSort {
 					minLoc=j;
 				}
 			}
-			arr[minLoc]=(arr[minLoc]+arr[i])-(arr[i]=arr[minLoc]);
+			//arr[minLoc]=(arr[minLoc]+arr[i])-(arr[i]=arr[minLoc]);
+			
+			int temp=arr[minLoc];
+			arr[minLoc]=arr[i];
+			arr[i]=temp;
+			
 			System.out.println(Arrays.toString(arr));
 		}
 		
 		
 		return arr;
 	}
-
 	
+	private int[] merge(int[] nums) {
+
+		for (int i = 0; i < nums.length; i++) {
+			int temp = nums[i];
+			int minLoc = findMin(nums, i);
+			nums[i] = nums[minLoc];
+			nums[minLoc] = temp;
+			System.out.println(Arrays.toString(nums));
+
+		}
+
+		return nums;
+	}
+
+	public int findMin(int[] nums, int startPos) {
+		int min = startPos;
+
+		for (int j = startPos + 1; j < nums.length; j++) {
+			if (nums[min] > nums[j])
+				min = j;
+		}
+		return min;
+
+	}
 
 }

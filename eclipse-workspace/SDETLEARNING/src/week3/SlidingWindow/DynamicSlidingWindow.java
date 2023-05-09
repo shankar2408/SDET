@@ -7,7 +7,7 @@ import org.junit.Test;
 public class DynamicSlidingWindow {
 	/*
 	 * Question here !!
-	 * 
+	 * match k in consecutive index of arrray and return the value
 	 */
 
 	@Test // +ve

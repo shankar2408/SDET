@@ -12,9 +12,9 @@ public class FindOnesDivideByConquer {
 
 	@Test // +ve
 	public void example1() {
-		int[] nums = { 0, 0, 0, 1, 1 ,1};
-		bruteForce(nums);
-		//System.out.println(one(nums));
+		int[] nums = { 0, 0, 1,1,1,1,1, 1, 1 ,1, 1};
+		//bruteForce(nums);
+		System.out.println(one(nums));
 	}
 
 	/*
