@@ -2,43 +2,48 @@ package week3.May10;
 
 import org.junit.Test;
 
+//https://leetcode.com/problems/valid-palindrome-ii/description/
+
 public class Palindrome {
 	@Test
 	public void TC1() {
-		String A = "abcdffdca";
+		String A = "abcdba";
 		System.out.println(validPalindrome(A));
 	
 	}
 
-	 public boolean validPalindrome(String s) {
 	        
-	       int i = 0, j = s.length() - 1;
-	        
-	        while (i < j) {
-	            if (s.charAt(i) != s.charAt(j)) {
-	                return isPalindrome(s, i + 1, j) || isPalindrome(s, i, j - 1);
-	            }
-	            i++;
-	            j--;
-	        }
+	      
 
-	        return true;
+	   public boolean validPalindrome(String s) {
+	        int left = 0 ; 
+	        int right = s.length() - 1;
+	        
+	        while(left<right){
+	            if(s.charAt(left) == s.charAt(right)){
+	                left++;
+	                right--;
+	            } else{
+	                return isPalindrome(s,left+1,right) || isPalindrome(s,left,right-1);
+	            }
+	        }
+	        
+	        return true ;
 	    }
 	    
-	   
-	    private boolean isPalindrome(String s, int i, int j) {
-	        
-	        while (i < j) {
-	            if (s.charAt(i) != s.charAt(j)) {
-	                return false;
+	    public boolean isPalindrome(String s , int left , int right){
+	        while(left<right){
+	        if(s.charAt(left) == s.charAt(right)){
+	                left++;
+	                right--;
+	          } else{
+	            return false ;
 	            }
-	            i++;
-	            j--;
-	        }
+	       }
 	        
-	        return true;
+	        return true ;
 	    }
-
+	    
+	    
+	}
 	
-
-}
