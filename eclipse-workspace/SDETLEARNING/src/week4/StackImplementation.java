@@ -2,6 +2,7 @@ package week4;
 
 import java.util.Arrays;
 import java.util.EmptyStackException;
+import java.util.*;
 
 public class StackImplementation {
 	
@@ -26,6 +27,8 @@ class stack{
 	private int size=50;
 	private Character stack[]=new Character[size];
 	private int top=0;
+	
+	ArrayList<Integer> list=new ArrayList<>();
 	
 	boolean push(Character element) {
 		if(top<size) {
