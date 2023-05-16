@@ -1,4 +1,4 @@
-package week4.LinkedListMay13;
+package week4;
 
 public class LearnLinkedList {
 	
