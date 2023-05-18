@@ -27,12 +27,12 @@ output = {2,3,4,5}
 		int add=6;
 		int index=6;
 		int[] nums = {11,8,9,6,4,2,3,5,7,0,1};
-		System.out.println(findmissingNumber(nums));
+		System.out.println(Arrays.toString(addNumberAtIndexOfArray(arr,add,index)));
 		System.out.println(printArrayAsString(arr));
+		System.out.println(findmissingNumber(nums));
 		System.out.println(containsArray(arr, contains));
 		System.out.println(Arrays.toString(trimLengthOfArray(arr,trimLength)));
 		System.out.println(Arrays.toString(removeValueInArray(arr,remove)));
-		System.out.println(Arrays.toString(addNumberAtIndexOfArray(arr,add,index)));
 		System.out.println(Arrays.toString(removefirstlastOccurrenceinArray(occuranceArray,remove)));
 		System.out.println(Arrays.toString(removeGivenIndexAllOccurrenceinArray(occuranceArray,index)));
 

@@ -52,10 +52,6 @@ public class DistinctNumber {
 
 	}
 
-	private void twoPointer() {
-
-	}
-
 }
 
 

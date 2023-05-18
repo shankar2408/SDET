@@ -1,4 +1,4 @@
-package week4;
+package week4.Stack;
 
 import org.junit.Test;
 import java.util.*;
@@ -55,7 +55,6 @@ public class BackspaceStringCompareMay16 {
 		
 		Stack<Character> stack1=new Stack<>();
 		Stack<Character> stack2=new Stack<>();
-
 		for(int i=0; i<s.length(); i++) {
 		if(s.charAt(i)!='#') {
 			stack1.push(s.charAt(i));

@@ -14,19 +14,19 @@ public class ProductOfArray {
 	@Test // +ve
 	public void example1() {
 		int[] nums = {4, 6, 2, 5};
-		System.out.println(Arrays.toString(productExceptSelf3(nums)));
+		System.out.println(Arrays.toString(productExceptSelf0(nums)));
 	}
 
 	@Test // edge
 	public void example2() {
 		int[] nums = { 1,2,3,4};
-		System.out.println(Arrays.toString(productExceptSelf3(nums)));
+		System.out.println(Arrays.toString(productExceptSelf0(nums)));
 	}
 
 	@Test // negative
 	public void example3() {
 		int[] nums = {-1,1,0,-3,3 };
-		System.out.println(Arrays.toString(productExceptSelf3(nums)));
+		System.out.println(Arrays.toString(productExceptSelf0(nums)));
 	}
 
 	/* 
@@ -52,6 +52,22 @@ public class ProductOfArray {
 
         return ans;
     }
+	
+	 public int[] productExceptSelf0(int[] nums) {
+	        int[] temp1=new int[nums.length];
+	        temp1[0]=1;
+	        int product=1;
+	        for(int i=0; i<nums.length-1; i++){
+	            temp1[i+1]=temp1[i] * nums[i];
+	        }
+	      
+	        for(int i=nums.length-1; i>=0; i--){
+	            temp1[i]=temp1[i] * product;
+	            product=nums[i]*product;
+	        }
+	        return temp1;
+	        
+	    }
 // *-------------------------------------------------------------------
 
 /**

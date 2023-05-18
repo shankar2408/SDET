@@ -12,7 +12,7 @@ public class AddDigit {/*
 	public void example1() {
 		int num = 9;
 		System.out.println(addDigit(num));
-		System.out.println(addDigits(num));
+		//System.out.println(addDigits(num));
 
 	}
 
@@ -20,7 +20,7 @@ public class AddDigit {/*
 	public void example2() {
 		int num = 123456788;
 		System.out.println(addDigit(num));
-		System.out.println(addDigits(num));
+		//System.out.println(addDigits(num));
 
 	}
 
@@ -28,7 +28,7 @@ public class AddDigit {/*
 	public void example3() {
 		int num = 0;
 		System.out.println(addDigit(num));
-		System.out.println(addDigits(num));
+		//System.out.println(addDigits(num));
 
 	}
 
@@ -40,12 +40,12 @@ public class AddDigit {/*
 
 	private int addDigit(int num) {
 
-		String str = String.valueOf(num);
-		//System.out.println(str.length());
-		int len = str.length();
+//		String str = String.valueOf(num);
+//		//System.out.println(str.length());
+//		int len = str.length();
 
-		for (int i = 0; i < len; i++) {
-			//while(num<9) {
+		//for (int i = 0; i < len; i++) {
+			while(num>9) {
 			int modulus = num % 10;
 			int divide = num / 10;
 			//System.out.println(modulus+"->"+divide);
