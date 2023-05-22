@@ -31,6 +31,15 @@ public class MakeTheStringGreat {
 
 	}
 	
+	/*
+	 * pseudocode:
+	 * create character stack
+	 * use for loop for iteration
+	 * if (!stack.isEmpty() && Math.abs(stack.peek() - s.charAt(i)) == 32),stack.pop
+	 * else stack.push
+	 * use string builder to append the stack stored char and return it after converting to string
+	 */
+	
 
     public String makeGood(String s) {
             Stack<Character> stack = new Stack<>();

@@ -29,13 +29,7 @@ public class ProductOfArray {
 		System.out.println(Arrays.toString(productExceptSelf0(nums)));
 	}
 
-	/* 
-	 * Brute force !!
-	 * Psuedo code here:
-	 * 
-	 * 
-	 */
-
+	
 	public static int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int[] ans = new int[n];

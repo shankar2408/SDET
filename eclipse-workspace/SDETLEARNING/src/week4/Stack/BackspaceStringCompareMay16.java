@@ -44,7 +44,7 @@ public class BackspaceStringCompareMay16 {
 	 * use stack and for loop
 	 * if # & !stack is empty, pop last value
 	 * else add it in stack
-	 * comapare both s & t and return the boolean
+	 * comapare both s & t are equal and return the boolean
 	 */
 
 	//String s="ab#c";

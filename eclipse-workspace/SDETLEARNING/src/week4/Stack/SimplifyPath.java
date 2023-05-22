@@ -1,4 +1,4 @@
-package week4;
+package week4.Stack;
 
 import java.util.Stack;
 
@@ -39,6 +39,15 @@ public class SimplifyPath {
 
 
 	}
+	
+	/*
+	 * create stack and split the string using /
+	 * use for each for iteration
+	 * if condition equals "." or is empty continue the loop
+	 * else if condition equals ".." and stack is not empty, stack.pop
+	 * else push the value into stack
+	 * return start with / and use string join with / for returning the string of value 
+	 */
 	
 
     public String simplifyPath(String path) {

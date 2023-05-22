@@ -1,6 +1,7 @@
 package week4;
 
 import java.util.Arrays;
+import java.util.*;
 
 import org.junit.Test;
 
@@ -37,6 +38,17 @@ public class BiggestAsciiChar {
 		String s = "a";
 		System.out.println(bruteForce(s));
 	}
+	
+	/*
+	 * Pseudocode:
+	 * create 2 new arrays
+	 * use for loop for iteration
+	 * check if the character is lowercase, store it in arr1[s.charAt(i)-'a']++;
+	 * else if the char is uppercase, store it in arr2[s.charAt(i)-'A']++;
+	 * use another for loop for comaparing 2 arrays
+	 * if(arr1[i]>0 && arr2[i]>0), return the char after adding the index with 'A' else return no
+
+	 */
 
 
 	private String bruteForce(String s) {
@@ -53,8 +65,8 @@ public class BiggestAsciiChar {
 		
 		for(int i=arr1.length-1; i>=0; i--) {
 			if(arr1[i]>0 && arr2[i]>0){
-				//char ch=(char)(i+'A');
-		        String str = Character.toString( (char) (i+'A'));
+				char ch=(char)(i+'A');
+		        String str = Character.toString(ch);
 
 				return str;
 						}

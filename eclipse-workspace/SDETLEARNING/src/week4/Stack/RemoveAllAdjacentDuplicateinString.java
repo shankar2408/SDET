@@ -21,6 +21,17 @@ public class RemoveAllAdjacentDuplicateinString {
 		String s = "azxxzy";
 		System.out.println(removeDuplicates(s));
 	}
+	
+	/*
+	 * pseudocode:
+	 * convert string to char
+	 * declare output string
+	 * use for loop for iteration
+	 * if not stack is empty and current and prev value is same, pop the stack
+	 * else push the value to stack
+	 * use while loop if not stack it empty, use pop to get value and store it in the output
+	 * return output string
+	 */
 
 	
 	public String removeDuplicates(String s) {

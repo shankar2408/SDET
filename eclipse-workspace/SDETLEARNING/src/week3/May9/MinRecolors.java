@@ -19,6 +19,7 @@ public class MinRecolors {
 		String blocks = "WBBWWBBWBW";
 		int k = 7;
 		System.out.println(minimumRecolors(blocks,k));
+		bruteForce(blocks,k);
 	}
 	
 	@Test
@@ -34,14 +35,56 @@ public class MinRecolors {
 	       int sum = Integer.MAX_VALUE ;
 	       int left = 0 ;
 	      for(int i = 0 ; i<blocks.length();i++){
-	          if(blocks.charAt(i)=='W') ans++ ;
+	          if(blocks.charAt(i)=='W') 
+	        	  ans++ ;
 	          if(i-left+1==k){
 	              sum = Math.min(sum,ans);
-	              if(blocks.charAt(left)=='W') ans--;
+	              if(blocks.charAt(left)=='W') 
+	            	  ans--;
 	              left++;
 	          }
 	      }
 	      return sum ;
 	    }
+	
+	 private int windowSliding(String input, int window){
+	        int index = 0, whiteMinimum = 0;
+
+	        //First window and collect number of whites in it
+	        while(index < window){
+	            if(input.charAt(index++) == 'W')
+	                whiteMinimum++;
+	        }
+
+	        int tempWhiteMinimum = whiteMinimum;
+
+	        //second window
+	        while(index < input.length()){
+	            if(input.charAt(index-window) == 'W')
+	                tempWhiteMinimum--;
+
+	            if(input.charAt(index++) == 'W')
+	                tempWhiteMinimum++;
+
+	            whiteMinimum = Math.min(whiteMinimum, tempWhiteMinimum);
+	        }
+	        return whiteMinimum;
+	    }
+
+	    private void bruteForce(String input, int k){
+
+	        int minimum = Integer.MAX_VALUE;
+
+	        for(int i =0; i <= input.length()-k;i++){
+	            int currentWhite = 0;
+	            for(int j = i ; j <= k+i-1;j++){
+	                if(input.charAt(j) == 'W')
+	                    currentWhite++;
+	            }
+	            minimum = Math.min(minimum, currentWhite);
+	        }
+	        System.out.println(minimum);
+	    }
+	
 
 }
