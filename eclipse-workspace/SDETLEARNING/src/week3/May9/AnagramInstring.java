@@ -48,6 +48,10 @@ Output => false => since ab is not part of any combination in s2
 		for (int i = 0; i < s2.length(); i++) {
 			f2[(s2.charAt(i) - 'a')]++;
 			if ((i - l + 1) == k) {
+				System.out.println("f2");
+				System.out.println(Arrays.toString(f2));
+				System.out.println("f1");
+				System.out.println(Arrays.toString(f1));
 				if (Arrays.equals(f2, f1)) return true;
 				f2[(s2.charAt(l++) - 'a')]--;
 			}
