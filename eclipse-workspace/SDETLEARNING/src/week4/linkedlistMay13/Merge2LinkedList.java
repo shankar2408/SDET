@@ -1,78 +1,96 @@
 package week4.linkedlistMay13;
 
 import org.junit.Test;
+import java.util.*;
 
 public class Merge2LinkedList {
 
-//	@Test
-//	public void TC1() {
-//		ListNode ll1 = [ 1, 2, 4 ];
-//		ListNode ll2 = [ 1, 2, 4 ];
-//		mergeTwoLists(ll1, ll2);
-//	}
-	
-	 
-	// Definition for singly-linked list.
-	public class ListNode {
-		int val;
-		ListNode next;
 
-		ListNode() {
-		}
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode() {}
+        ListNode(int val) { this.val = val; }
+        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+    }
 
-		ListNode(int val) {
-			this.val = val;
-		}
+    ListNode head = null, tail =null;
 
-		ListNode(int val, ListNode next) {
-			this.val = val;
-			this.next = next;
-		}
-	}
+    public ListNode addAll(int[] input){
+        for(int value: input)
+            if(head == null)
+                head = tail = new ListNode(value);
+            else
+                tail = tail.next = new ListNode(value);
+        return head;
+    }
 
-	public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-		if (list1 == null && list2 == null)
-			return null;
-		if (list1 == null)
-			return list2;
-		if (list2 == null)
-			return list1;
+    @Override
+    public String toString(){
+        ArrayList<Integer> list = new ArrayList<>();
 
-		ListNode h1 = null;
-		ListNode h2 = null;
+        ListNode temp = head;
+        while(temp != null) {
+            list.add(temp.val);
+            temp = temp.next;
+        }
 
-		if (list1.val <= list2.val) {
-			h1 = list1;
-			h2 = list2;
+        return list.toString();
+    }
 
-		} else {
-			h2 = list1;
-			h1 = list2;
-		}
+    private ListNode mergeList(ListNode head1, ListNode head2){
 
-		ListNode prev = null;
-		ListNode head = h1;
 
-		while (h1 != null && h2 != null) {
-			if (h1.val <= h2.val) {
-				prev = h1;
-				h1 = h1.next;
-			} else {
-				prev.next = h2;
-				ListNode temp = h2;
-				h2 = h2.next;
-				temp.next = h1;
-				prev = temp;
-			}
-		}
+        ListNode head , tail;
 
-		if (h1 == null) {
-			prev.next = h2;
-		}
-		if (h2 == null)
-			prev.next = h1;
+        if(head1.val < head2.val){
+            tail = head = new ListNode(head1.val);
+            head1 = head1.next;
+        }else{
+            tail = head = new ListNode(head2.val);
+            head2 = head2.next;
+        }
 
-		return head;
 
-	}
+        while(head1 != null & head2 !=null){
+            if(head1.val < head2.val){
+                tail = tail.next =  new ListNode(head1.val);
+                head1 = head1.next;
+            }else{
+                tail = tail.next =  new ListNode(head2.val);
+                head2 = head2.next;
+            }
+        }
+        if(head1 != null)
+            tail.next = head1;
+        else
+            tail.next = head2;
+       
+        return head;
+    }
+
+
+
+    @Test
+    public void test(){
+        ListNode head1 = new Merge2LinkedList().addAll(new int[]{1,2,4,5,6,8}),
+                head2 = new Merge2LinkedList().addAll(new int[]{1,3,4});
+
+       ListNode newHead = mergeList(head1, head2);
+       print(newHead);
+    }
+
+
+    private void print(ListNode node){
+        while(node != null) {
+            System.out.print(node.val + " ");
+            node = node.next;
+        }
+        System.out.println();
+    }
+
+
+
+
+
 }
