@@ -45,4 +45,12 @@ public class Operations {
         }
         return x;
     }
+	
+	public int finalValueAfterOperations1(String[] operations) {
+        int x = 0;
+        for(String s : operations)
+            if(s.charAt(1) == '-') x--;
+            else x++;
+        return x;
+    }
 }
