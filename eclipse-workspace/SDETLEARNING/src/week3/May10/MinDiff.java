@@ -14,13 +14,13 @@ public class MinDiff {
 	public void example() {
 		int[] arr = {9,4,1,7}; //9,4,1,7
 		int  k= 2;
-		System.out.println(minimumDifference(arr, k));
+		System.out.println(minimumDifference1(arr, k));
 	}
 	@Test
 	public void example1() {
 		int[] arr = {90};
 		int  k= 1;
-		System.out.println(minimumDifference(arr, k));
+		System.out.println(minimumDifference1(arr, k));
 	}
 
 	private int minimumDifference(int[] arr, int k) {

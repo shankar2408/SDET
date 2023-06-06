@@ -3,6 +3,7 @@ package week3.May10;
 import org.junit.Test;
 
 //https://leetcode.com/problems/valid-palindrome-ii/description/
+//Given a string s, return true if the s can be palindrome after deleting at most one character from it.
 
 public class Palindrome {
 	@Test

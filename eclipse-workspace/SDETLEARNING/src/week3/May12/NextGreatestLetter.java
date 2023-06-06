@@ -36,6 +36,16 @@ public class NextGreatestLetter {
 	 * 
 	 */
 
+	public char bf(char[] letters, char target) {
+        for(int i=0; i<letters.length; i++){
+            if(target<letters[i]){
+                return letters[i];
+            }
+        }
+        return letters[0];
+    }
+
+	
 	public char nextGreatestLetter(char[] letters, char target) {
         int start=0;
         int end=letters.length-1;

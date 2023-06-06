@@ -5,8 +5,7 @@ import org.junit.Test;
 public class SubstringDistinctCharacters {
 	/*
 	 * Question here !!
-	 * https://leetcode.com/problems/substrings-of-size-three-with-distinct-
-	 * characters/description/
+	 * https://leetcode.com/problems/substrings-of-size-three-with-distinct-characters/description/
 	 */
 
 	@Test // +ve
@@ -26,6 +25,18 @@ public class SubstringDistinctCharacters {
 	 * Psuedo code here: 
 	 * 
 	 */
+	
+	public int countGoodSubstrings(String s) {
+	      int n = s.length();
+	        if(n<3) return 0;
+	        int c=0;
+	        for(int i =0;i<=n-3;i++){
+	            if(s.charAt(i)!=s.charAt(i+1) && s.charAt(i+1)!=s.charAt(i+2) && s.charAt(i)!=s.charAt(i+2)){
+	                c++;
+	            }  
+	        }
+	        return c;
+	    }
 
 	private int bruteForce(String s) {
 		int i=0, j=0, count=0;

@@ -10,7 +10,7 @@ public class SlidingWindow {
 
 	@Test // +ve
 	public void example1() {
-		int[] nums = {11,1,5,2,3,7,1,50};
+		int[] nums = {11,1,5,20,3,7,1,50};
 		int k=3;
 		System.out.println(bruteForce(nums,k));
 		slidingWindow(nums,k);
@@ -35,8 +35,7 @@ public class SlidingWindow {
 		}
 		
 		return max;
-	}
-	
+	}	
 	
 	private void slidingWindow(int[] nums, int k) {
 		int maxSum=0;

@@ -32,6 +32,13 @@ Output => false => since ab is not part of any combination in s2
 		String s2 = "eidbdooobab";
 		System.out.println(solve(s1, s2));
 	}
+	
+	@Test
+	public void TC2() {
+		String s1 = "ab";
+		String s2 = "eidboaoo";
+		System.out.println(solve(s1, s2));
+	}
 
 	private boolean solve(String s1, String s2) {
 
@@ -48,12 +55,12 @@ Output => false => since ab is not part of any combination in s2
 		for (int i = 0; i < s2.length(); i++) {
 			f2[(s2.charAt(i) - 'a')]++;
 			if ((i - l + 1) == k) {
-				System.out.println("f2");
-				System.out.println(Arrays.toString(f2));
-				System.out.println("f1");
-				System.out.println(Arrays.toString(f1));
-				if (Arrays.equals(f2, f1)) return true;
+				
+				if (Arrays.equals(f2, f1)) {
+					return true;
+				}else {
 				f2[(s2.charAt(l++) - 'a')]--;
+				}
 			}
 		}
 
