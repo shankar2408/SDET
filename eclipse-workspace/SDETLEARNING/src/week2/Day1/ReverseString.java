@@ -31,8 +31,15 @@ public class ReverseString {
 	/* 
 	 * Brute force !!
 	 * Psuedo code here:
+	 * split the given string using space
+	 * use for loop for iterating the splitted string
+	 * convert the string to charArray
+	 * use 2 pointer reverse string approach to reverse the splitted string
+	 * pass the reversed char to splitted string
+	 * return string.join(" ",s)
 	 * 
-	 * 
+	 * Tc-O(n2)
+	 * Sc-O(n)
 	 */
 
 	private String reverseString(String str) {

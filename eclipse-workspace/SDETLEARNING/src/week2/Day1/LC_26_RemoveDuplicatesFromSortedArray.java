@@ -44,6 +44,8 @@ public class LC_26_RemoveDuplicatesFromSortedArray {
 	 * declare unique=0;
 	 * if num[i]!=num[i+1] then add in num[unique++]=num[i]
 	 * return unique for count and for array add new array and pass the unique value and print output
+	 * TC-O(n)
+	 * SC-O(n)
 	 */
 
 	private int[] bruteForce(int[] nums) {
@@ -67,7 +69,7 @@ public class LC_26_RemoveDuplicatesFromSortedArray {
 
 	}
 	
-	//leetcode answer
+	//leetcode answer TC-O(n), SC-O(1)
 	public int removeDuplicates(int[] nums) {
 		
 		        
@@ -76,8 +78,7 @@ public class LC_26_RemoveDuplicatesFromSortedArray {
 		        for(int i = 0; i < nums.length - 1; i++) {
 		            
 		            if(nums[i] != nums[i + 1]){ //if true, num[i + 1] is a new unique number
-		              nums[addIndex] = nums[i + 1];
-		              addIndex++;
+		              nums[addIndex++] = nums[i + 1];
 		            }
 		        }
 		        return addIndex;

@@ -29,7 +29,7 @@ public class LC_283_MoveZeroes {
 	@Test // negative
 	public void example3() {
 		int[] num= {4,2,4,0,0,3,0,5,1,0};
-		System.out.println(Arrays.toString(twoPointer(num)));
+		//System.out.println(Arrays.toString(twoPointer(num)));
 		System.out.println(Arrays.toString(bruteForce(num)));
 
 	}
@@ -38,21 +38,25 @@ public class LC_283_MoveZeroes {
 	 * Brute force !!
 	 * Psuedo code here:
 	 * decalre j=0
+	 * declare new array
 	 * use for loop for i iteration
-	 * if num[i] is not equal to 0 -> add it in num[j++] array (if value is not filled in array, it will convert it as 0)
-	 * return num
+	 * if num[i] is not equal to 0 -> add it in op[j++] array (if value is not filled in array, it will convert it as 0)
+	 * return op
+	 * 
+	 * TC-O(n)
+	 * SC-O(n)
 	 */
 
 	private int[] bruteForce(int[] num) {
 		int j=0;
-		for(int i=0; i<num.length-1; i++) {
+		int[] op=new int[num.length];
+		for(int i=0; i<num.length; i++) {
 			if(num[i]!=0) {
-				num[j++]=num[i];
+				op[j++]=num[i];
 			}
 		}
 
-		return num;
-
+		return op;
 	}
 	/* 
 	 * 2 pointer !!
@@ -61,6 +65,9 @@ public class LC_283_MoveZeroes {
 	 * if right is not zero then swap left and right and do left increment
 	 * 
 	 * print num
+	 * 
+	 * * TC-O(n)
+	 * SC-O(1)
 	 */
 	
 	private int[] twoPointer(int[] num) {

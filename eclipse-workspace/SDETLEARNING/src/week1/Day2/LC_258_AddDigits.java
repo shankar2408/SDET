@@ -34,7 +34,14 @@ public class LC_258_AddDigits {/*
 
 	/*
 	 * Brute force !! Psuedo code here:
+	 * while num>9
+	 * store nums %10 value in modulus
+	 * store num/10 value in divide
+	 * num=modulus+divide
+	 * return num
 	 * 
+	 * TC: O(n)
+	 * SC:O(1)
 	 * 
 	 */
 

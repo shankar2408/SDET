@@ -26,6 +26,9 @@ public class LC_1688_CountOfMatchesInTournament {
 	based on teams advances should make the matches and store the result until matches comes to 1 while(num<1)
 
 	then return sum of the matches
+	
+	TC-O(n)
+	SC-O(1)
 	*
 	*
 	*/

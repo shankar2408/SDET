@@ -11,7 +11,7 @@ public class LC_414_ThirdMaximumNumber {
 
 	@Test // +ve
 	public void example1() {
-		int[] nums = {3,2,1};
+		int[] nums = {3,2,-2147483648};
 		System.out.println(bruteForce(nums));
 		System.out.println(bruteForce1(nums));
 
@@ -63,9 +63,9 @@ public class LC_414_ThirdMaximumNumber {
 	//int[] nums = { 2, 2, 3, 1 };
 	private int bruteForce1(int[] nums) {
 		int n=nums.length;
-        long firstmax=Integer.MIN_VALUE;   
-        long secondmax=Integer.MIN_VALUE;   
-        long thirdmax=Integer.MIN_VALUE;   
+        long firstmax=Long.MIN_VALUE;   
+        long secondmax=Long.MIN_VALUE;   
+        long thirdmax=Long.MIN_VALUE;   
         for(int i=0;i<n;i++)
         {
             if(nums[i]>firstmax)
@@ -84,7 +84,7 @@ public class LC_414_ThirdMaximumNumber {
                 thirdmax=nums[i];
             }
         }
-        return (int) (thirdmax==Integer.MIN_VALUE ? firstmax : thirdmax);
+        return (int) (thirdmax==Long.MIN_VALUE ? firstmax : thirdmax);
         
     }
 

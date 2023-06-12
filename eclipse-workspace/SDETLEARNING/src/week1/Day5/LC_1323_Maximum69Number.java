@@ -4,6 +4,8 @@ import org.junit.Test;
 
 public class LC_1323_Maximum69Number {
 	
+	//https://leetcode.com/problems/maximum-69-number/
+	
 	@Test
 	public void TC1() {
 		int num = 9669;
@@ -30,7 +32,18 @@ public class LC_1323_Maximum69Number {
 		System.out.println(maximum69Number(num));
 		System.out.println(max69Number(num));	}
 
-	//Time complexity - O(n)
+	/*
+	 * Pseudocode
+	 * convert num to string
+	 * convert it to char array
+	 * use for loop for iteration from 0 to length
+	 * if ch[i]=='6', change it to 9 and break
+	 * return in int datate
+	 * 
+	 * TC-O(n)
+	 * SC-O(1)
+	 */
+	
 	public int maximum69Number (int num) {
 
         String s = String.valueOf(num);

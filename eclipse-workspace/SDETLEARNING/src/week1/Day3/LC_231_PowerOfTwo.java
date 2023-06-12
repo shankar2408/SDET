@@ -40,8 +40,13 @@ An integer n is a power of two, if there exists an integer x such that n == 2x.
 	/* 
 	 * Brute force !!
 	 * Psuedo code here:
+	 * if n==0 return false
+	 * if n==1 return true
+	 * if n%2 !=0 return false
+	 * return isPowerofTwo(n/2) until n becomes 1 or n%2!=0
 	 * 
-	 * 
+	 * TC=O(log n)
+	 * SC=O(1)
 	 */
 
 		public boolean isPowerOfTwo(int n) {

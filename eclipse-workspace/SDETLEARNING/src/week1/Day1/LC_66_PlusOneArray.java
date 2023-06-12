@@ -36,8 +36,15 @@ Increment the large integer by one and return the resulting array of digits.
 	/* 
 	 * Brute force !!
 	 * Psuedo code here:
+	 * use for loop for backward iteration
+	 * if digits[i]>9, increase the value by 1 and return digits
+	 * else digits[i]=0
+	 * create new array with digits.length+1
+	 * digits[0]=1
+	 * return digits
 	 * 
-	 * 
+	 * TC:O(n)
+	 * SC:O(n)
 	 */
 
 	private int[] bruteForce(int[] digits) {
@@ -59,8 +66,5 @@ Increment the large integer by one and return the resulting array of digits.
 
 	}
 
-	private void twoPointer() {
-
-	}
-
+	
 }
