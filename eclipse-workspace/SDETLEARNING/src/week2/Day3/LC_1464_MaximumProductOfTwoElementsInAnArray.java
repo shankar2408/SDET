@@ -38,7 +38,7 @@ public class LC_1464_MaximumProductOfTwoElementsInAnArray {
 	 * iteration
 	 */
 //(nums[i]-1)*(nums[j]-1)
-	//Time complexity-O(n^2)
+	//Time complexity-O(n^2) Sc-O(1)
 	private int bruteForce(int[] nums) {
 		int max = 0;
 		for (int i = 0; i < nums.length; i++) {
@@ -52,7 +52,7 @@ public class LC_1464_MaximumProductOfTwoElementsInAnArray {
 
 	}
 
-	//Time complexity-O(n)
+	//Time complexity-O(n) SC=O(1)
 	public int twoPointer(int[] arr) {
 		int i = 0, j = arr.length - 1;
 		int maxValue = Integer.MIN_VALUE;

@@ -37,6 +37,8 @@ public class LC_27_RemoveElement {
 	 * Use for loop for i iteration
 	 * if(num[i]!=val)-> num[j++]=num[i];
 	 * return j
+	 * 
+	 * TC-O(n) SC-O(1)
 	 */
 //time complexity-O(n)
 	private int bruteForce(int[] nums, int val) {

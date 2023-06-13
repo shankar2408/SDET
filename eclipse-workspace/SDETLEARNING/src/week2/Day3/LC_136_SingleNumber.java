@@ -17,8 +17,8 @@ public class LC_136_SingleNumber {
 
 	@Test // edge
 	public void example2() {
-		int[] nums = {2,4, 1, 2, 1, 2 };
-		System.out.println(bruteForce(nums));
+		int[] nums = {4, 1, 2, 1, 2 };
+		System.out.println(singleNumber(nums));
 
 	}
 
@@ -35,6 +35,7 @@ public class LC_136_SingleNumber {
 	 * if element match increase count++
 	 * return the count==1 element value 
 	 * 
+	 * TC-O(n2) SC-O(1)
 	 */
 
 	private int bruteForce(int[] nums) {
@@ -55,4 +56,13 @@ public class LC_136_SingleNumber {
 		return 0;
 
 	}
+	
+	public int singleNumber(int[] nums) {
+        int ans=0; //since XOR with 0 returns same number 
+        for(int i=0; i<nums.length; i++){
+            ans ^= nums[i];  // ans = (ans) XOR (array element at i) 
+            System.out.println(ans+"ans");
+        }
+        return ans;    
+    }
 }

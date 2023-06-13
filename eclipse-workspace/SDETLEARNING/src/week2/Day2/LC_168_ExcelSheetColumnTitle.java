@@ -24,6 +24,19 @@ AB -> 28
 		System.out.println(convertToTitle(columnNumber));
 
 	}
+	
+	/*
+	 * Pseudocode
+	 * declare empty string ans
+	 * while(n>0), reduce column number by n-- for every iteration because to startwith 'A' ascii value
+	 * string ans =('A'+n%26)+ans to store the last char
+	 * n=n/26
+	 * after the iteration fails
+	 * return ans
+	 * 
+	 * TC-O(logn)
+	 * SC-O(1)
+	 */
 
 	
 

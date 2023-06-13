@@ -37,14 +37,21 @@ public class LC_942_DIStringMatch {
 	/* 
 	 * Brute force !!
 	 * Psuedo code here:
+	 * declare a new array with s.length+1
+	 * declare i,j,index
+	 * while index<s.length
+	 * if s.charAt(index)=='I', result index=start else end
+	 * index++
+	 * result[length-1]=start or end
+	 * return result
 	 * 
-	 * 
+	 * TC=O(n) SC=O(n)
 	 */
 
 	//leetcode answer
 	private int[] bruteForce(String s) {
 		 int[] result = new int[s.length() + 1];
-	        int end = result.length - 1, start = 0;
+	        int end = s.length(), start = 0;
 	        int index = 0;
 	        while(index < s.length()){
 	            if(s.charAt(index) == 'I'){

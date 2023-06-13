@@ -37,7 +37,7 @@ public class LC_1768_MergeStringsAlternately {
 	 * length condition matched print word2 char by using charAt to output string
 	 * increment both i and j return output after the end of loop
 	 */
-//Time complexity-O(n)
+//Time complexity-O(n), SC=O(1)
 	private String bruteForce(String word1, String word2) {
 		String output = "";
 		int i = 0, j = 0;

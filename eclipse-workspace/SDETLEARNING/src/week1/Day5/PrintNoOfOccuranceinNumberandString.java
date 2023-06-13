@@ -12,7 +12,7 @@ public class PrintNoOfOccuranceinNumberandString {
 	
 	/*
 	 * Question here !!
-	 * Find distinct number
+	 * PrintNoOfOccuranceinNumberandString
 	 */
 
 	@Test // number
@@ -29,9 +29,6 @@ public class PrintNoOfOccuranceinNumberandString {
 		
 	}
 
-
-	
-	
 	private void findOccurrenceInNum(int[] num) {
 		HashMap<Integer,Integer> map=new HashMap<>();
 		
