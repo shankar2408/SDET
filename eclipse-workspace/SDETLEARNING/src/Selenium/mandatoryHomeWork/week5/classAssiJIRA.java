@@ -62,7 +62,6 @@ public class classAssiJIRA {
 			opt.addArguments("incognito");
 			opt.addArguments("start-maximized");
 			
-			
 			//System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver_113.exe");
 			ChromeDriver dr = new ChromeDriver(opt);
 			Actions act = new Actions(dr);
